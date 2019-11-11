@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace CommentTranslator.Ardonment
 {
@@ -265,9 +266,6 @@ namespace CommentTranslator.Ardonment
         /// <param name="tag"></param>
         private void StartTranslate(CommentTag tag)
         {
-           
-
-
             var comment = tag.Comment;
             if (!string.IsNullOrEmpty(comment.Content) && (_translatedComment == null || comment.Content != _translatedComment.Content))
             {
