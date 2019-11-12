@@ -74,7 +74,6 @@ namespace Framework
             }
             catch (Exception ex)
             {
-                Trace.WriteLine("vs::" + ex.Message);
             }
         }
         ~ApiClient()
@@ -96,7 +95,6 @@ namespace Framework
             }
             catch (Exception ex)
             {
-                Trace.WriteLine("vs::" + ex.Message);
             }
         }
 
