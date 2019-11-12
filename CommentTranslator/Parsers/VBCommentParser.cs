@@ -20,6 +20,13 @@ namespace CommentTranslator.Parsers
                 new ParseTag()
                 {
                     Start = "'",
+                    End = "\n",
+                    Name = "singleline_ms"
+                },
+
+                new ParseTag()
+                {
+                    Start = "'",
                     End = "",
                     Name = "singlelineend"
                 },

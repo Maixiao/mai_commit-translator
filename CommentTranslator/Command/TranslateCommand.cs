@@ -19,6 +19,8 @@ using System.Globalization;
 using System.Linq;
 using CommentTranslator.Option;
 using Microsoft.VisualStudio.Shell.Interop;
+using System.Diagnostics;
+
 
 namespace CommentTranslator
 {
@@ -135,7 +137,6 @@ namespace CommentTranslator
                 //修剪所选文本
                 var parser = CommentParserHelper.GetCommentParser(dte.ActiveDocument.Language);
                 var text = selection.Text.Trim();
-
                 if (parser != null)
                 {
                     var regions = parser.GetCommentRegions(text, 0);
@@ -173,11 +174,6 @@ namespace CommentTranslator
             VsShellUtilities.ShowMessageBox(package, message, title,
                 OLEMSGICON.OLEMSGICON_WARNING, OLEMSGBUTTON.OLEMSGBUTTON_OK, OLEMSGDEFBUTTON.OLEMSGDEFBUTTON_FIRST);
         }
-
-
-
-
-
 
     }
 }

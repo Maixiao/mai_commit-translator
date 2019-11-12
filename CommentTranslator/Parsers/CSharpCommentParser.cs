@@ -18,12 +18,26 @@ namespace CommentTranslator.Parsers
                     Name = "xmldoc"
                 },
 
+                new ParseTag()
+                {
+                    Start = "///",
+                    End = "\n",
+                    Name = "xmldoc_ms"
+                },
+
                 //Singleline comment
                 new ParseTag()
                 {
                     Start = "//",
                     End = Environment.NewLine,
                     Name = "singleline"
+                },
+
+                new ParseTag()
+                {
+                    Start = "//",
+                    End = "\n",
+                    Name = "singleline_ms"
                 },
 
                 //Multi line comment

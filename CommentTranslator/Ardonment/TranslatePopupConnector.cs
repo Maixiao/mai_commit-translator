@@ -58,7 +58,6 @@ namespace CommentTranslator.Ardonment
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
             }
 
             if (adornment != null)

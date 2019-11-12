@@ -16,7 +16,12 @@ namespace CommentTranslator.Parsers
                     End = Environment.NewLine,
                     Name = "singleline"
                 },
-
+                new ParseTag()
+                {
+                    Start = "//",
+                    End = "\n",
+                    Name = "singleline_ms"
+                },
                 //Multi line comment
                 new ParseTag(){
                     Start = "(*",

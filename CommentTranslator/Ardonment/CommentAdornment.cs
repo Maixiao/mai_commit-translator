@@ -224,6 +224,7 @@ namespace CommentTranslator.Ardonment
 
         private void Translate(CommentTag tag, bool force = false)
         {
+            Trace.WriteLine("vs::Translate");
             //Set translating tag
             _currentTag = tag;
 
@@ -266,6 +267,7 @@ namespace CommentTranslator.Ardonment
         /// <param name="tag"></param>
         private void StartTranslate(CommentTag tag)
         {
+            Trace.WriteLine("vs::StartTranslate");
             var comment = tag.Comment;
             if (!string.IsNullOrEmpty(comment.Content) && (_translatedComment == null || comment.Content != _translatedComment.Content))
             {

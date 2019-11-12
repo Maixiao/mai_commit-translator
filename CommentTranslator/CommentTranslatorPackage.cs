@@ -113,27 +113,15 @@ namespace CommentTranslator
 
         private void WindowEvents_WindowActivated(Window GotFocus, Window LostFocus)
         {
-            Debug.WriteLine("Focus: " + GotFocus.Caption);
         }
 
         private void DocumentEvents_DocumentSaved(Document Document)
         {
-            Debug.WriteLine("Save: " + Document.Name);
-
         }
 
         private void DocumentEvents_DocumentOpened(Document Document)
         {
-            Debug.WriteLine("Open: " + Document.Name);
         }
-
-
-
-
-
-
-
-
         #endregion
     }
 }

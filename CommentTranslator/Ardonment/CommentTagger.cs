@@ -6,6 +6,7 @@ using RangeTree;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Diagnostics;
 
 namespace CommentTranslator.Ardonment
 {
@@ -62,12 +63,6 @@ namespace CommentTranslator.Ardonment
             {
                 ranges.Add(rangeItems);
             }
-
-            //Debug.WriteLine("GetTags: ({0}, {1}) -> {2}/{3}",
-            //           entire.Start.Position,
-            //           entire.End.Position,
-            //           currentRegions.Where(x => x.Start <= entire.Start && x.Length + x.Start >= entire.End).Count(),
-            //           currentRegions.Count());
 
             foreach (var region in currentRegions)
             {
@@ -151,8 +146,6 @@ namespace CommentTranslator.Ardonment
 
             if (changeStart <= changeEnd)
             {
-                //Debug.WriteLine("ReParse: ({0}, {1})", changeStart, changeEnd);
-
                 ITextSnapshot snap = this._snapshot;
                 TagsChanged?.Invoke(this, new SnapshotSpanEventArgs(new SnapshotSpan(this._snapshot, Span.FromBounds(changeStart, changeEnd))));
             }

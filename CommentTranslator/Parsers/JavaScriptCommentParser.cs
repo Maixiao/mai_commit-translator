@@ -24,6 +24,12 @@ namespace CommentTranslator.Parsers
                 new ParseTag()
                 {
                     Start = "//",
+                    End = "\n",
+                    Name = "comment"
+                },
+                new ParseTag()
+                {
+                    Start = "//",
                     End = "",
                     Name = "singlelineend"
                 },
