@@ -11,6 +11,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using System.Threading;
 
 namespace CommentTranslator.Ardonment
 {
@@ -224,7 +225,6 @@ namespace CommentTranslator.Ardonment
 
         private void Translate(CommentTag tag, bool force = false)
         {
-            Trace.WriteLine("vs::Translate");
             //Set translating tag
             _currentTag = tag;
 
@@ -267,7 +267,7 @@ namespace CommentTranslator.Ardonment
         /// <param name="tag"></param>
         private void StartTranslate(CommentTag tag)
         {
-            Trace.WriteLine("vs::StartTranslate");
+
             var comment = tag.Comment;
             if (!string.IsNullOrEmpty(comment.Content) && (_translatedComment == null || comment.Content != _translatedComment.Content))
             {
@@ -291,6 +291,7 @@ namespace CommentTranslator.Ardonment
                             TranslateComplete(new TranslatedComment(comment, data.Result.Data), data.Exception);
                         }
                     }, TaskScheduler.FromCurrentSynchronizationContext());
+
             }
         }
 

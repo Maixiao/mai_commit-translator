@@ -7,12 +7,9 @@ namespace CommentTranslator.Util
     /// </summary>
     public class Settings
     {
-        //public const string SettingCollection = @"InstalledProducts\Comment Translator";
 
-        //public const string TranslateUrlProperty = @"TranslateUrl";
-        //public const string TranslateFromProperty = @"TranslateFrom";
-        //public const string TranslateToProperty = @"TranslateTo";
-        //public const string AutoDetectProperty = @"AutoDetect";
+        public long APPID { get; set; }
+        public string KEY { get; set; }
 
         public string TKK { get; set; }
         public string TranslateUrl { get; set; }
@@ -29,7 +26,9 @@ namespace CommentTranslator.Util
         /// <param name="page"></param>
         public void ReloadSetting(OptionPageGrid page)
         {
-            TranslateUrl = "";//page.TranslateUrl;
+            TranslateUrl = page.TranslateUrl;//page.TranslateUrl;
+            APPID = page.APPID;
+            KEY = page.KEY;
             TranslateFrom = page.TranslateFrom;
             TranslateTo = page.TranslatetTo;
             AutoDetect = page.AutoDetect;

@@ -4,6 +4,8 @@ namespace Framework
 {
     public interface IApiRequest
     {
+        long APPID { get; set; }
+        string KEY { get; set; }
         string Url { get; set; }
         string Method { get; set; }
         string TKK { get; set; }

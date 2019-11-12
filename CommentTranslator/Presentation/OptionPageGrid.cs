@@ -10,10 +10,13 @@ namespace CommentTranslator.Option
     /// </summary>
     public class OptionPageGrid : DialogPage
     {
-        /*[Category("Server")]
-        [DisplayName("翻译服务器URL")]
-        [Description("翻译服务器的网址")]
-        public string TranslateUrl { get; set; } = "https://translate.google.cn/";*/
+        /// <summary>
+        /// 谷歌TKK
+        /// </summary>
+        [Category("Server")]
+        [DisplayName("翻译服务器（google；baidu）")]
+        [Description("翻译服务器的供应商（google；baidu）")]
+        public string TranslateUrl { get; set; } = "google";
 
         /// <summary>
         /// 谷歌TKK
@@ -22,6 +25,24 @@ namespace CommentTranslator.Option
         [DisplayName("谷歌TKK")]
         [Description("设置谷歌TKK参数")]
         public string TKK { get; set; }
+
+
+        /// <summary>
+        /// 百度APP ID
+        /// </summary>
+        [Category("Server")]
+        [DisplayName("百度APP ID")]
+        [Description("百度APP ID")]
+        public long APPID { get; set; } = 0;
+
+
+        /// <summary>
+        /// 百度KEY
+        /// </summary>
+        [Category("Server")]
+        [DisplayName("百度KEY")]
+        [Description("百度KEY")]
+        public string KEY { get; set; } = "";
 
         /// <summary>
         /// 待翻译语言

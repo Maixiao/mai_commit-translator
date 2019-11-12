@@ -196,6 +196,7 @@ namespace CommentTranslator.Support
                 if (spans.IntersectsWith(new NormalizedSnapshotSpanCollection(ar.Key)))
                     toRemove.Add(ar.Key);
 
+
             foreach (var spanDataPair in GetAdornmentData(spans).Distinct(new Comparer()))
             {
                 // Look up the corresponding adornment or create one if it's new.

@@ -34,7 +34,6 @@ namespace CommentTranlsator.Client
         /// <returns></returns>
         public async Task<IAPIResponse> Translate(string text)
         {
-            if (string.IsNullOrWhiteSpace(_settings.TKK)) throw new ArgumentNullException("TKK", "TKK值不能为空");
             var request = new ApiRequest()
             {
                 ContentType = CONTENT_TYPE,
@@ -42,13 +41,15 @@ namespace CommentTranlsator.Client
                 Method = METHOD,
                 TKK = _settings.TKK,
                 Url = _settings.TranslateUrl,
+                APPID = _settings.APPID,
+                KEY = _settings.KEY,
                 Body = Encoding.UTF8.GetBytes(text),  //待翻译文本
                 Headers = new Dictionary<string, string>()
             };
 
             request.Headers.Add("from-language", _settings.AutoDetect ? "auto" : _settings.TranslateFrom);
             request.Headers.Add("to-language", _settings.TranslateTo);
-            IAPIResponse aPIResponse = await Execute(request);
+            IAPIResponse aPIResponse = await ExecuteAsync(request);
             // request.Headers.Add("auto-detect-language", _settings.AutoDetect.ToString());
             return aPIResponse;
         }
